@@ -16,5 +16,7 @@ public:
   Body();
 
   Body(float x, float y, float radius, float mass, RGB color);
+
+  Body(float x, float y, float radius, float mass, float ax, float ay, RGB color);
 };
 #endif
