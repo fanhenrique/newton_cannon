@@ -12,8 +12,8 @@ Body::Body(float x, float y, float radius, float mass, RGB color)
   this->color = color;
 }
 
-Body::Body(float x, float y, float radius, float mass, float ax, float ay, RGB color) : Body(x, y, radius, mass, color)
+Body::Body(float x, float y, float radius, float mass, float vx, float vy, RGB color) : Body(x, y, radius, mass, color)
 {
-  this->ax = ax;
-  this->ay = ay;
+  this->vx = vx;
+  this->vy = vy;
 }
