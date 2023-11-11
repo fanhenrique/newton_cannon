@@ -1,5 +1,3 @@
-#include <iostream>
-
 // my imports
 #include "include/draw.h"
 
