@@ -1,5 +1,5 @@
 // my imports
-#include "include/rgba.h"
+#include "../include/rgba.h"
 
 RGBA::RGBA() {}
 

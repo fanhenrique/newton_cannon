@@ -1,5 +1,5 @@
 // my imports
-#include "include/math.h"
+#include "../include/math.h"
 
 float GRAVITATIONAL_CONSTANT = 0.9;
 

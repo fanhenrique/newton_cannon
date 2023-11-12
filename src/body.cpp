@@ -1,5 +1,5 @@
 // my imports
-#include "include/body.h"
+#include "../include/body.h"
 
 Body::Body() {}
 

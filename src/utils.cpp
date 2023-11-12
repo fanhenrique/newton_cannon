@@ -1,5 +1,6 @@
+#include <iostream>
 // my imports
-#include "include/utils.h"
+#include "../include/utils.h"
 
 // external
 int SCREEN_WIDTH = 1280;

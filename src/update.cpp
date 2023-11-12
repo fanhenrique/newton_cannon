@@ -1,5 +1,5 @@
 // my imports
-#include "include/update.h"
+#include "../include/update.h"
 
 void update_projectile(Body *b1, Body *b2)
 {
