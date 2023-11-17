@@ -14,18 +14,18 @@ void update_projectile(Body *b1, Body *b2)
     // b2->ax = 0.0;
     // b2->ay = 0.0;
 
-    b2->vx = 0.0;
-    b2->vy = 0.0;
+    b2->velocity.x = 0.0;
+    b2->velocity.y = 0.0;
   }
   else
   {
-    b2->ax = x_acceleration;
-    b2->ay = y_acceleration;
+    b2->acceleration.x = x_acceleration;
+    b2->acceleration.y = y_acceleration;
 
-    b2->vx += b2->ax;
-    b2->vy += b2->ay;
+    b2->velocity.x += b2->acceleration.x;
+    b2->velocity.y += b2->acceleration.y;
 
-    b2->x += b2->vx;
-    b2->y += b2->vy;
+    b2->position.x += b2->velocity.x;
+    b2->position.y += b2->velocity.y;
   }
 }

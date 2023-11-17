@@ -13,7 +13,7 @@ void draw_text(ALLEGRO_FONT *font, float x, float y, const char *text)
 
 void draw_filled_body(Body *b)
 {
-  al_draw_filled_circle(b->x, b->y, b->radius, al_map_rgba_f(b->color.r, b->color.g, b->color.b, b->color.a));
+  al_draw_filled_circle(b->position.x, b->position.y, b->radius, al_map_rgba_f(b->color.r, b->color.g, b->color.b, b->color.a));
 }
 
 void draw_camera_cross(float x_camera_center, float y_camera_center)
@@ -46,7 +46,7 @@ void draw_projectiles(std::vector<Projectile *> *projectiles)
 
 void draw_force_vector(Body *b, float x_force_vector, float y_force_vector)
 {
-  al_draw_line(b->x, b->y, (b->x + x_force_vector * MULTIPLY_WITH_THE_VECTOR), (b->y + y_force_vector * MULTIPLY_WITH_THE_VECTOR), al_map_rgba_f(b->color.r, b->color.g, b->color.b, b->color.a), 2);
+  al_draw_line(b->position.x, b->position.y, (b->position.x + x_force_vector * MULTIPLY_WITH_THE_VECTOR), (b->position.y + y_force_vector * MULTIPLY_WITH_THE_VECTOR), al_map_rgba_f(b->color.r, b->color.g, b->color.b, b->color.a), 2);
 }
 
 }
@@ -60,8 +60,8 @@ void draw_body_informations(ALLEGRO_FONT *font, ALLEGRO_TRANSFORM *camera_inform
   std::stringstream x_acceleration_string;
   std::stringstream y_acceleration_string;
   acceleration_string << "Acceleration";
-  x_acceleration_string << "x " << b->ax;
-  y_acceleration_string << "y " << b->ay;
+  x_acceleration_string << "x " << b->acceleration.x;
+  y_acceleration_string << "y " << b->acceleration.y;
   draw_text(font, 0, 0, acceleration_string.str().c_str());
   draw_text(font, 0, 40, x_acceleration_string.str().c_str());
   draw_text(font, 0, 80, y_acceleration_string.str().c_str());
@@ -70,8 +70,8 @@ void draw_body_informations(ALLEGRO_FONT *font, ALLEGRO_TRANSFORM *camera_inform
   std::stringstream x_velocity_string;
   std::stringstream y_velocity_string;
   velocity_string << "Velocity";
-  x_velocity_string << "x " << b->vx;
-  y_velocity_string << "y " << b->vy;
+  x_velocity_string << "x " << b->velocity.x;
+  y_velocity_string << "y " << b->velocity.y;
   draw_text(font, 0, 120, velocity_string.str().c_str());
   draw_text(font, 0, 160, x_velocity_string.str().c_str());
   draw_text(font, 0, 200, y_velocity_string.str().c_str());
@@ -80,8 +80,8 @@ void draw_body_informations(ALLEGRO_FONT *font, ALLEGRO_TRANSFORM *camera_inform
   std::stringstream x_position_string;
   std::stringstream y_position_string;
   position_string << "Position";
-  x_position_string << "x " << b->x;
-  y_position_string << "y " << b->y;
+  x_position_string << "x " << b->position.x;
+  y_position_string << "y " << b->position.y;
   draw_text(font, 0, 240, position_string.str().c_str());
   draw_text(font, 0, 280, x_position_string.str().c_str());
   draw_text(font, 0, 320, y_position_string.str().c_str());

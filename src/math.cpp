@@ -5,7 +5,7 @@ float GRAVITATIONAL_CONSTANT = 0.9;
 
 float distance(Body *b1, Body *b2)
 {
-  return sqrt(pow((b2->x - b1->x), 2) + pow((b2->y - b1->y), 2));
+  return sqrt(pow((b2->position.x - b1->position.x), 2) + pow((b2->position.y - b1->position.y), 2));
 }
 
 bool collision(Body *b1, Body *b2)
@@ -20,8 +20,8 @@ float gravitational_force(Body *b1, Body *b2)
 
 std::pair<float, float> decompose_gravitational_force(Body *b1, Body *b2, float gravitational_force)
 {
-  float x_gravitatinal_force = gravitational_force * ((b1->x - b2->x) / distance(b1, b2));
-  float y_gravitatinal_force = gravitational_force * ((b1->y - b2->y) / distance(b1, b2));
+  float x_gravitatinal_force = gravitational_force * ((b1->position.x - b2->position.x) / distance(b1, b2));
+  float y_gravitatinal_force = gravitational_force * ((b1->position.y - b2->position.y) / distance(b1, b2));
 
   return {x_gravitatinal_force, y_gravitatinal_force};
 }
