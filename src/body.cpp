@@ -1,19 +1,19 @@
 // my imports
 #include "../include/body.h"
+#include "../include/rgba.h"
+#include "../include/point.h"
 
 Body::Body() {}
 
-Body::Body(float x, float y, float radius, float mass, RGBA color)
+Body::Body(Point position, float radius, float mass, RGBA color)
 {
-  this->x = x;
-  this->y = y;
+  this->position = position;
   this->radius = radius;
   this->mass = mass;
   this->color = color;
 }
 
-Body::Body(float x, float y, float radius, float mass, float vx, float vy, RGBA color) : Body(x, y, radius, mass, color)
+Body::Body(Point position, float radius, float mass, Point initial_velocity, RGBA color) : Body(position, radius, mass, color)
 {
-  this->vx = vx;
-  this->vy = vy;
+  this->velocity = initial_velocity;
 }
