@@ -46,8 +46,9 @@ void draw_projectiles(std::vector<Projectile *> *projectiles)
 
 void draw_force_vector(Body *b, float x_force_vector, float y_force_vector)
 {
-  // TODO rever se as coordenadas estão certas
-  al_draw_line(b->x, b->y, (b->x + x_force_vector * MULTIPLY_WITH_THE_VECTOR), (b->y + y_force_vector * MULTIPLY_WITH_THE_VECTOR), al_map_rgb(0, 0, 255), 2);
+  al_draw_line(b->x, b->y, (b->x + x_force_vector * MULTIPLY_WITH_THE_VECTOR), (b->y + y_force_vector * MULTIPLY_WITH_THE_VECTOR), al_map_rgba_f(b->color.r, b->color.g, b->color.b, b->color.a), 2);
+}
+
 }
 
 void draw_body_informations(ALLEGRO_FONT *font, ALLEGRO_TRANSFORM *camera_informations, Body *b)

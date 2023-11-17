@@ -1,10 +1,7 @@
 #ifndef RGBA_H
 #define RGBA_H
-class RGBA
+typedef struct rgba
 {
-public:
-  float r, g, b, a;
-  RGBA();
-  RGBA(float r, float g, float b, float a);
-};
+  float r = 1.f, g = 1.f, b = 1.f, a = 1.f;
+} RGBA;
 #endif
