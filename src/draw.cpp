@@ -38,12 +38,10 @@ void draw_axios(float *camera_position)
   al_draw_line(SCREEN_WIDTH / 2, camera_position[1] / CAMERA_SCALE, SCREEN_WIDTH / 2, (camera_position[1] + SCREEN_HEIGHT) / CAMERA_SCALE, al_map_rgb(186, 186, 186), 1 / CAMERA_SCALE);
 }
 
-void draw_projectiles(std::vector<Body *> *projectiles)
+void draw_projectiles(std::vector<Projectile *> *projectiles)
 {
   for (int i = 0; i < projectiles->size(); i++)
-  {
     draw_filled_body(projectiles->at(i));
-  }
 }
 
 void draw_force_vector(Body *b, float x_force_vector, float y_force_vector)
