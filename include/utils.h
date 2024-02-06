@@ -1,4 +1,8 @@
 #include <tuple>
+#include <vector>
+#include <string>
+#include <sstream>
+#include <iomanip>
 #include <X11/Xlib.h>
 
 // allegro imports
@@ -26,3 +30,5 @@ void calculate_camera_position(float *camera_position, float &x_camera_center, f
 void camera_scale(ALLEGRO_EVENT *event);
 
 void camera_scrolling(ALLEGRO_EVENT *event, float *x_camera_center, float *y_camera_center);
+
+std::vector<ALLEGRO_BITMAP *> *load_bitmap();

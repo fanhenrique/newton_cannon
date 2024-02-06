@@ -108,3 +108,19 @@ void camera_scrolling(ALLEGRO_EVENT *event, float *x_camera_center, float *y_cam
   if (event->keyboard.keycode == ALLEGRO_KEY_DOWN)
     *y_camera_center += CAMERA_DIRECTION_JUMP;
 }
+
+std::vector<ALLEGRO_BITMAP *> *load_bitmap()
+{
+  std::vector<ALLEGRO_BITMAP *> *sprites = new std::vector<ALLEGRO_BITMAP *>();
+
+  for (int i = 1; i < 120; i++)
+  {
+    std::ostringstream path;
+    path << "./earth_svg/" << std::setfill('0') << std::setw(4) << i << ".svg";
+    // std::cout << path.str() << std::endl;
+    ALLEGRO_BITMAP *earth = al_load_bitmap(path.str().c_str());
+    sprites->push_back(earth);
+  }
+
+  return sprites;
+}
