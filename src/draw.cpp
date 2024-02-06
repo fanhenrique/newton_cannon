@@ -1,7 +1,7 @@
 // my imports
 #include "../include/draw.h"
 
-float MULTIPLY_WITH_THE_VECTOR = 1000.0;
+float MULTIPLY_WITH_THE_VECTOR = 5000.0;
 
 float CAMERA_CROSS_SIZE = 15.0;
 
@@ -41,7 +41,10 @@ void draw_axios(float *camera_position)
 void draw_projectiles(std::vector<Projectile *> *projectiles)
 {
   for (int i = 0; i < projectiles->size(); i++)
+  {
     draw_filled_body(projectiles->at(i));
+    draw_force_vector(projectiles->at(i), projectiles->at(i)->acceleration.x, projectiles->at(i)->acceleration.y);
+  }
 }
 
 void draw_force_vector(Body *b, float x_force_vector, float y_force_vector)
