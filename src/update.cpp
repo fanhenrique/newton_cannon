@@ -29,3 +29,9 @@ void update_projectile(Body *b1, Body *b2)
     b2->position.y += b2->velocity.y;
   }
 }
+
+void update_projectiles(Body *b1, std::vector<Projectile *> *projectiles)
+{
+  for (int i = 0; i < projectiles->size(); i++)
+    update_projectile(b1, projectiles->at(i));
+}
