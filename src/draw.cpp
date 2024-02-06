@@ -49,6 +49,10 @@ void draw_force_vector(Body *b, float x_force_vector, float y_force_vector)
   al_draw_line(b->position.x, b->position.y, (b->position.x + x_force_vector * MULTIPLY_WITH_THE_VECTOR), (b->position.y + y_force_vector * MULTIPLY_WITH_THE_VECTOR), al_map_rgba_f(b->color.r, b->color.g, b->color.b, b->color.a), 2);
 }
 
+void draw_trail(Body *b)
+{
+  // TODO
+  // al_draw_line(b->x, b->y, b->old_x, b->old_y, al_map_rgba_f(b->color.r, b->color.g, b->color.b, b->color.a), 3);
 }
 
 void draw_body_informations(ALLEGRO_FONT *font, ALLEGRO_TRANSFORM *camera_informations, Body *b)

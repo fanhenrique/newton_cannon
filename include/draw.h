@@ -26,4 +26,6 @@ void draw_projectiles(std::vector<Projectile *> *projectiles);
 
 void draw_force_vector(Body *b, float x_force_vector, float y_force_vector);
 
+void draw_trail(Body *b);
+
 void draw_body_informations(ALLEGRO_FONT *font, ALLEGRO_TRANSFORM *camera_informations, Body *b);
