@@ -16,6 +16,7 @@
 #include "../include/draw.h"
 #include "../include/math.h"
 #include "../include/update.h"
+#include "../include/camera.h"
 
 using namespace std;
 

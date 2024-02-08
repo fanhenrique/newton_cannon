@@ -2,15 +2,9 @@
 // my imports
 #include "../include/utils.h"
 
-// external
 int SCREEN_WIDTH = 1280;
 int SCREEN_HEIGHT = 720;
-float CAMERA_SCALE = 1.0;
 int FONT_SIZE = 36;
-
-// internal
-float CAMERA_SCALE_JUMP = 0.1;
-float CAMERA_DIRECTION_JUMP = 7.0;
 float FPS = 60.0;
 
 std::tuple<ALLEGRO_DISPLAY *, ALLEGRO_TIMER *, ALLEGRO_EVENT, ALLEGRO_EVENT_QUEUE *, ALLEGRO_TRANSFORM, ALLEGRO_TRANSFORM, ALLEGRO_FONT *> init()
@@ -70,43 +64,6 @@ ALLEGRO_EVENT_QUEUE *init_queue_event(ALLEGRO_DISPLAY *display, ALLEGRO_TIMER *t
   al_register_event_source(queue, al_get_mouse_event_source());
 
   return queue;
-}
-
-void camera_update(ALLEGRO_TRANSFORM *camera, float *camera_position, float &x_camera_center, float &y_camera_center)
-{
-  al_identity_transform(camera);
-  al_scale_transform(camera, CAMERA_SCALE, CAMERA_SCALE);
-  calculate_camera_position(camera_position, x_camera_center, y_camera_center);
-  al_translate_transform(camera, -camera_position[0], -camera_position[1]);
-  al_use_transform(camera);
-}
-
-void calculate_camera_position(float *camera_position, float &x_camera_center, float &y_camera_center)
-{
-  camera_position[0] = -(SCREEN_WIDTH / 2) + (x_camera_center * CAMERA_SCALE);
-  camera_position[1] = -(SCREEN_HEIGHT / 2) + (y_camera_center * CAMERA_SCALE);
-}
-
-void camera_scale(ALLEGRO_EVENT *event)
-{
-  if (event->keyboard.keycode == ALLEGRO_KEY_Z)
-    CAMERA_SCALE += CAMERA_SCALE_JUMP;
-  if (event->keyboard.keycode == ALLEGRO_KEY_X)
-    CAMERA_SCALE -= CAMERA_SCALE_JUMP;
-  if (CAMERA_SCALE < CAMERA_SCALE_JUMP)
-    CAMERA_SCALE = CAMERA_SCALE_JUMP;
-}
-
-void camera_scrolling(ALLEGRO_EVENT *event, float *x_camera_center, float *y_camera_center)
-{
-  if (event->keyboard.keycode == ALLEGRO_KEY_RIGHT)
-    *x_camera_center += CAMERA_DIRECTION_JUMP;
-  if (event->keyboard.keycode == ALLEGRO_KEY_LEFT)
-    *x_camera_center -= CAMERA_DIRECTION_JUMP;
-  if (event->keyboard.keycode == ALLEGRO_KEY_UP)
-    *y_camera_center -= CAMERA_DIRECTION_JUMP;
-  if (event->keyboard.keycode == ALLEGRO_KEY_DOWN)
-    *y_camera_center += CAMERA_DIRECTION_JUMP;
 }
 
 std::vector<ALLEGRO_BITMAP *> *load_bitmap()

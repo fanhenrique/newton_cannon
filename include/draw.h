@@ -13,6 +13,7 @@
 #include "body.h"
 #include "projectile.h"
 #include "utils.h"
+#include "camera.h"
 
 void draw_text(ALLEGRO_FONT *font, float x, float y, const char *text);
 
