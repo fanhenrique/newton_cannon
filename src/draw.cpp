@@ -1,7 +1,7 @@
 // my imports
 #include "../include/draw.h"
 
-float MULTIPLY_WITH_THE_VECTOR = 5000.0;
+float MULTIPLY_WITH_THE_VECTOR = 2000.0;
 
 float CAMERA_CROSS_SIZE = 15.0;
 
@@ -13,6 +13,7 @@ void draw_text(ALLEGRO_FONT *font, float x, float y, const char *text)
 
 void draw_filled_body(Body *b)
 {
+  al_draw_filled_circle(b->position.x, b->position.y, b->radius + 5.0, al_map_rgba_f(0.22, 0.22, 0.22, 1));
   al_draw_filled_circle(b->position.x, b->position.y, b->radius, al_map_rgba_f(b->color.r, b->color.g, b->color.b, b->color.a));
 }
 
