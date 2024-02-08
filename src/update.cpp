@@ -11,8 +11,8 @@ void update_projectile(Body *b1, Body *b2)
 
   if (collision(b1, b2))
   {
-    // b2->ax = 0.0;
-    // b2->ay = 0.0;
+    b2->acceleration.x = 0.0;
+    b2->acceleration.y = 0.0;
 
     b2->velocity.x = 0.0;
     b2->velocity.y = 0.0;
