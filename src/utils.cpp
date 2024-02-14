@@ -36,7 +36,6 @@ std::tuple<ALLEGRO_DISPLAY *, ALLEGRO_TIMER *, ALLEGRO_EVENT, ALLEGRO_EVENT_QUEU
 
   ALLEGRO_DISPLAY *display = al_create_display(SCREEN_WIDTH, SCREEN_HEIGHT);
 
-  al_set_window_position(display, 200, 200);
   al_set_window_title(display, "Newton cannon");
 
   ALLEGRO_TIMER *timer = al_create_timer(1.0 / FPS);
