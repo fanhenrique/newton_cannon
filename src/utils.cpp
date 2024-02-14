@@ -12,7 +12,6 @@ std::tuple<ALLEGRO_DISPLAY *, ALLEGRO_TIMER *, ALLEGRO_EVENT, ALLEGRO_EVENT_QUEU
   al_init();
 
   al_install_keyboard();
-  al_install_mouse();
   al_init_primitives_addon();
   al_init_image_addon();
   al_init_font_addon();
@@ -60,7 +59,6 @@ ALLEGRO_EVENT_QUEUE *init_queue_event(ALLEGRO_DISPLAY *display, ALLEGRO_TIMER *t
   al_register_event_source(queue, al_get_display_event_source(display));
   al_register_event_source(queue, al_get_timer_event_source(timer));
   al_register_event_source(queue, al_get_keyboard_event_source());
-  al_register_event_source(queue, al_get_mouse_event_source());
 
   return queue;
 }
